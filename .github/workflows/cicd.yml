@@ -40,3 +40,10 @@ jobs:
         run: flake8 stocks_products/logistic --exclude stocks_products/logistic/migrations
       - name: Тестирование
         run: python stocks_products/manage.py test
+      - name: Деплой
+        uses: appleboy/ssh-action@master
+        with:   
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USER }}
+          password: ${{ secrets.SSH_PASSWORD }}
+          script: expect /home/serg/3.2-crud/stocks_products/pull.exp
