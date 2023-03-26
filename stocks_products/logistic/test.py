@@ -9,8 +9,3 @@ class TestSampleView(TestCase):
         client = APIClient()
         response = client.get('/api/v1/test/')
         self.assertEqual(response.data, 'This is checking!')  # type: ignore
-
-
-
-
-
