@@ -33,4 +33,4 @@ def sample_view(request):
 
 @api_view(['GET'])
 def some_view(request):
-    return Response('hay!')
+    return Response('Hay!')
